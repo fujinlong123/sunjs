@@ -19,7 +19,9 @@ App({
         //登录态过期
         login();
       }
-    })
+    });
+
+    reportUserInfo();
 
   },
 
@@ -27,6 +29,12 @@ App({
     userInfo: null
   }
 })
+
+
+
+
+
+
 
 // 登录
 var login = function () {
@@ -70,7 +78,7 @@ var login = function () {
       }
     }
   })
-}
+};
 
 
 var reportUserInfo=function(){
@@ -103,4 +111,4 @@ var reportUserInfo=function(){
       }
     }
   })
-}
+};
