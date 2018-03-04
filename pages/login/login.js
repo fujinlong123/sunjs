@@ -18,7 +18,7 @@ Page({
   onLoad: function (options) {
     this.login();
     wx.showLoading({
-      title: '加载中',
+      title: '加载中数据中',
     });
   },
 
