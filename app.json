@@ -1,10 +1,12 @@
 {
   "pages": [
-   
+    "pages/login/login",
     "pages/index/index",
     "pages/product/product",
     "pages/logs/logs",
-    "pages/setting/setting"
+    "pages/setting/setting",
+    "pages/error/error"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
