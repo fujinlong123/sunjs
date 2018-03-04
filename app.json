@@ -1,0 +1,15 @@
+{
+  "pages": [
+   
+    "pages/index/index",
+    "pages/product/product",
+    "pages/logs/logs",
+    "pages/setting/setting"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "超市收银小程序",
+    "navigationBarTextStyle": "black"
+  }
+}

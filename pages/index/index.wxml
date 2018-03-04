@@ -1,0 +1,59 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='goodsView'>
+    <scroll-view scroll-y style='flex:1 1 0rpx;' >
+      <view class="table">
+        <view class="tr bg-w">
+          <view class="th">名称</view>
+          <view class="th">数量</view>
+          <view class="th ">金额</view>
+        </view>
+        <block wx:for="{{listData}}" wx:key="{{code}}">
+          <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+            <view class="td">{{item.code}}</view>
+            <view class="td">{{item.text}}</view>
+            <view class="td">{{item.type}}</view>
+          </view>
+          <view class="tr" wx:else>
+            <view class="td">{{item.code}}</view>
+            <view class="td">{{item.text}}</view>
+            <view class="td">{{item.type}}</view>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+ 
+  <view class='btnView'>
+
+  
+    <view id="panel" class="flex-column">
+    <view class=" flex-row">
+        <button class="flex-cell  bg-black color-withe" style='flex:1 1 0%;' bindtap='setting' >设置</button>
+        <button  class="flex-cell" style='flex:4 1 0%;text-align:right;padding-right:5vh;'><rich-text nodes="{{resultHtml}}" ></rich-text></button>
+
+      </view>
+      <view class=" flex-row">
+        <button type="primary" class="flex-cell  bg-green">X1</button>
+        <button type="primary" class="flex-cell bg-green">X2</button>
+        <button type="primary" class="flex-cell  bg-green">X3</button>
+        <button type="primary" class="flex-cell  bg-green" >X4</button>
+        <button type="primary" class="flex-cell  bg-green" >X5</button>
+      </view>
+      <view class="flex-row ">
+        <button type="primary" class="flex-cell  bg-green" >X6</button>
+        <button type="primary" class="flex-cell  bg-green" >X7</button>
+        <button type="primary" class="flex-cell  bg-green" >X8</button>
+        <button type="primary" class="flex-cell  bg-green" >X9</button>
+        <button type="primary" class="flex-cell  bg-green">X10</button>
+      </view>
+      <view class="flex-row">
+        <button type="warn" class="flex-cell  bg-dimgrey" style='flex:1 1 0%;'>放弃</button>
+        <button class="flex-cell  bg-deeppink" style='flex:1 1 0%;'>确定</button>
+        <button class="flex-cell  bg-yellowgreen" style='flex:3 1 0%' bindtap='bindViewTap' >扫码</button>
+      </view>
+    </view>
+  </view>
+
+
+</view>

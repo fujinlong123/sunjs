@@ -1,0 +1,24 @@
+<!--pages/product/product.wxml-->
+
+
+<view class='weui-cells'>
+  <view class='weui-cell weui-cell_access'>
+    <view class="weui-cell__bd">
+      <view class='product-name'>三星Glaxay S8（SM-G9050）</view>
+      <view class='product-details'>价格:<text class='product-price'>￥7000.0</text> <text class='product-code'> 编码:876787768686</text></view>
+    </view>
+    <view class='product-discount'>10折</view>
+  </view>
+
+   <view class='weui-cell weui-cell_access'>
+    <view class="weui-cell__bd ">
+      <view class='product-name'>三星Glaxay S8（SM-G9050）</view>
+      <view class='product-details'>价格:<text class='product-price'>￥7000.0</text> <text class='product-code'> 编码:876787768686</text></view>
+    </view>
+    <view class='product-discount'>9.9折</view>
+  </view>
+
+
+
+
+</view>

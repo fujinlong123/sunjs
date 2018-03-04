@@ -1,0 +1,21 @@
+<view class='weui-cells'>
+  <navigator url='../product/product' >
+    <view class='weui-cell weui-cell_access'>
+      <view class="weui-cell__bd ">录入商品</view>
+      <view class='weui-cell__ft'></view>
+    </view>
+  </navigator>
+  <view class='weui-cell weui-cell_access'>
+    <view class="weui-cell__bd ">录入需称重的商品</view>
+    <view class='weui-cell__ft'></view>
+  </view>
+</view>
+
+<view class='weui-cells__title'></view>
+
+<view class='weui-cells'>
+  <view class='weui-cell weui-cell_access'>
+    <view class="weui-cell__bd ">邀请收银员</view>
+    <view class='weui-cell__ft'></view>
+  </view>
+</view>
