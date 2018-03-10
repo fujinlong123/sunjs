@@ -17,7 +17,13 @@ Page({
       { "code": "康师傅方便面", "text": "1", "type": "5" },
       { "code": "康师傅方便面", "text": "1", "type": "5" },
       { "code": "康师傅方便面", "text": "1", "type": "5" }, 
+      { "code": "康师傅方便面", "text": "1", "type": "5" },
+      { "code": "康师傅方便面", "text": "1", "type": "5" },
+      { "code": "康师傅方便面", "text": "1", "type": "5" }, 
+      { "code": "康师傅方便面", "text": "1", "type": "5" },
+      { "code": "康师傅方便面", "text": "1", "type": "5" }, 
       { "code": "康师傅方便面", "text": "1", "type": "5" }
+
      
     ],
     resultHtml:"<b>总计:</b><span style='color:red;'>￥508.90</span><sub><span style='font-size:15px;'>(5件)</span></sub>"

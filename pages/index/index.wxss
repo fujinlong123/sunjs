@@ -1,4 +1,17 @@
 /**index.wxss**/
+page{
+  height:100%;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content:flex-start;
+  padding:  0;
+  box-sizing: border-box;
+} 
 .userinfo {
   display: flex;
   flex-direction: column;
