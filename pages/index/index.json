@@ -1,1 +1,7 @@
-{}
+{
+  "usingComponents": {
+    "wxc-counter": "../../../packages/wxc-counter/dist/index",
+    "wxc-icon": "../../../packages/wxc-icon/dist/index",
+    "goods-preview": "../../../packages/goods-preview/dist/index"
+  }
+}

@@ -87,7 +87,6 @@ sun.login=function(options){
       sun._login();
     }
   })
-  sun.reportUserInfo();
 }
 
 

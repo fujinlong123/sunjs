@@ -1,0 +1,66 @@
+<!--packages/goods-preview/index.wxml-->
+<!-- goods_preview -->
+<view style='display:flex;height:240rpx;background:#FFF'>
+
+  <view class="left" style='width:30rpx;margin-top:30rpx;margin-bottom:40rpx'></view>
+
+  <!-- center   -->
+  <view class="center" style='flex-grow:1;margin-top:30rpx;margin-bottom:40rpx;display:flex'>
+
+
+    <!-- center left  -->
+    <view style="background:#EEE;width:170rpx;text-align:center;vertical-align:middle; ">
+      <wxc-icon size="150" color="green" type="weixin" _pid="{{_pid}}"></wxc-icon>
+    </view>
+    <!-- center left  -->
+
+    <!-- center right  -->
+    <view style="flex-grow:1;display:flex;flex-direction:column ">
+
+
+      <!-- desc  -->
+      <view style="flex-grow:1;display:flex">
+
+        <view style="flex:1;line-height:1;width:0px;display:flex;flex-direction:column">
+          <view style='padding-left:20rpx;overflow: hidden;text-overflow:ellipsis;font-size:28rpx;height:86rpx'>
+            鲜牛奶（965ML）
+          </view>
+          <view style='padding-left:20rpx;flex:1;'>
+          </view>
+
+          <view style='padding-left:20rpx;padding-bottom:6rpx;heigh:30rpx;overflow: hidden;text-overflow:ellipsis;white-space: nowrap'>
+            <text style='font-size:24rpx;color:#999'>编码：6924688501115</text>
+          </view>
+
+
+        </view>
+
+        <view style="width:160rpx;text-align:right;font-size:28rpx;line-height:1;">
+          ￥198.98
+        </view>
+
+      </view>
+      <!-- desc  -->
+
+      <!-- opt  -->
+      <view style="height:60rpx;padding-left:20rpx;display:flex">
+        <view style="flex-grow:1">
+          <wxc-counter number="1" color="red" max="{{10000}}" min="1" bind:changenumber="onChangeNumber" _pid="{{_pid}}"></wxc-counter>
+        </view>
+        <view style="width:60rpx;text-align:right">
+          <wxc-icon size="45" color="#999" type="delete" _pid="{{_pid}}"></wxc-icon>
+        </view>
+      </view>
+      <!-- opt  -->
+
+    </view>
+
+    <!-- center right  -->
+
+  </view>
+  <!-- center   -->
+
+  <view class="right" style='width:30rpx;margin-top:15px;margin-bottom:40rpx'></view>
+
+</view>
+<!-- goods_preview -->

@@ -1,3 +1,6 @@
+
+@import '../stepper/index.wxss';
+
 /**index.wxss**/
 page{
   height:100%;
@@ -142,3 +145,44 @@ page{
   height: 3rem;
   align-items: center;
 }
+
+
+.button-sp-area{
+    margin: 0 auto;
+    padding-top:5px;
+    padding-bottom:5px;
+    text-align:left;
+    flex-grow: 1;
+    
+  }
+
+.weui-btn{
+  margin-top:0px;
+  
+}
+.weui-form-preview__ft{
+  line-height:0px;
+}
+
+.weui-form-preview{
+    margin-bottom:15px;
+    
+}
+
+
+.weui-form-preview:first-child{
+    margin-top:15px;
+}
+
+.top-info{
+ position:absolute;top:50px;z-index:100;right:0px;left:0px;
+}
+.weui-form-preview__label{
+  color:black;
+}
+
+.weui-form-preview__value{
+  color:black;
+}
+
+
