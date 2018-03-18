@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "goods-list": "../../../packages/goods-list/dist/index"
+  }
+}

@@ -1,0 +1,29 @@
+.label {
+    display: inline-block;
+    height: 30rpx;
+    line-height: 30rpx;
+    padding: 0 10rpx;
+    font-size: 20rpx;
+    font-family: PingFangSC;
+    border-radius: 4rpx;
+    vertical-align: middle;
+    overflow: hidden;
+  }
+  .label__system--android {
+    line-height: 34rpx;
+  }
+  .label__type--corner {
+    width: 36rpx;
+    height: 24rpx;
+    line-height: 24rpx;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    border-top-left-radius: 4rpx;
+    border-bottom-right-radius: 4rpx;
+    background: rgba(255,85,119, 0.8);
+    text-align: center;
+  }
+  .label__type--corner.label__system--android {
+    line-height: 24rpx;
+  }

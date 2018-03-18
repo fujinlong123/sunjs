@@ -1,0 +1,6 @@
+<!--packages/goods-list/dist/goods-list.wxml-->
+
+
+<block wx:for="{{goodsList}}" wx:key="item">
+  <goods-item id="goodsItem{{index}}" price="{{item.price}}" index="{{index}}" bind:counterChange="counterChange"  name="{{item.name}}" num="{{item.num}}" code="{{item.code}}"></goods-item>
+</block>

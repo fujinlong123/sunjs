@@ -1,0 +1,4 @@
+<view class="label label__type--{{labelType}} label__system--{{_system_}}" style="border: 1px solid {{typeColor}}; background-color:{{labelType === 'plain' ? 'transparent' : typeColor}}; color: {{labelType === 'plain' ? typeColor : textColor}};">
+    <slot wx:if="{{!text}}"></slot>
+    {{text ? text : ''}}
+</view>

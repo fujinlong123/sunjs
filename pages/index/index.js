@@ -5,54 +5,46 @@
 const app = getApp()
 
 
- Page({
+Page({
   data: {
-    motto: 'Hello World',
+    sumPrice:0,
+    goodsCount:0,
+    scrollTop:0,
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    listData: [
-      { "code": "巧克力", "text": "1", "type": "8.6" },
-      { "code": "卤蛋", "text": "1", "type": "1.6" },
-      { "code": "康师傅方便面", "text": "1", "type": "5" },
-      { "code": "康师傅方便面", "text": "1", "type": "5" },
-      { "code": "康师傅方便面", "text": "1", "type": "5" },
-      { "code": "康师傅方便面", "text": "1", "type": "5" },
-      { "code": "康师傅方便面", "text": "1", "type": "5" },
-      { "code": "康师傅方便面", "text": "1", "type": "5" },
-      { "code": "康师傅方便面", "text": "1", "type": "5" },
-      { "code": "康师傅方便面", "text": "1", "type": "5" },
-      { "code": "康师傅方便面", "text": "1", "type": "5" },
-      { "code": "康师傅方便面", "text": "1", "type": "5" },
-      { "code": "康师傅方便面", "text": "1", "type": "5" },
-      { "code": "康师傅方便面", "text": "1", "type": "5" }
-
-
-    ],
-    resultHtml: "<b>总计:</b><span style='color:red;'>￥508.90</span><sub><span style='font-size:15px;'>(5件)</span></sub>",
+  
     tabs: ["待收银", "已完成", "已取消"],
     activeIndex: 0,
     sliderOffset: 0,
     sliderLeft: 0
-   
-  },
+
+  }, 
+
+
   //事件处理函数
-  bindViewTap () {
-    wx.scanCode({
+  bindViewTap() {
+
+    this.goodsList.addItem({ price: 12.01, name: "晨光鲜牛奶", num: 1, code: "6924686501115" });
+    this.setData({"scrollTop":100000});
+    /*wx.scanCode({
       success: (res) => {
         console.log(res);
       },
       complete: (res) => {
 
       }
-    });
+    });*/
+  },
+  settleAccounts(){
+   console.log( this.goodsList.getSumPrice());
   },
 
-  touchStart (event) {
-   /* console.log(event);
-    this.setData({
-      startX: event.changedTouches[0].pageX
-    });*/
+  touchStart(event) {
+    /* console.log(event);
+     this.setData({
+       startX: event.changedTouches[0].pageX
+     });*/
   },
   touchEnd(event) {
     /*if ((event.changedTouches[0].pageX - this.data.startX) < 0) {
@@ -123,15 +115,16 @@ const app = getApp()
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-  }, 
-  handleZanStepperChange(e) {
-    var componentId = e.componentId;
-    var stepper = e.stepper;
+  },
 
-    this.setData({
-      [`${componentId}.stepper`]: stepper
-    });
+  onReady() {
+    this.goodsList = this.selectComponent("#goodsListComp");
+  },
+  goodsListChange(){
+    this.setData({ sumPrice:this.goodsList.getSumPrice()});
+    this.setData({ goodsCount: this.goodsList.getGoodsCount() });
   }
+  
 })
 
 

@@ -3,12 +3,7 @@ export default Component({
   properties: {
     number: {
       type: [Number, String],
-      value: 0,
-      observer: function (newVal) {
-        this.setData({
-          number: parseInt(newVal, 10)
-        });
-      }
+      value: 0
     },
     max: {
       type: [Number, String],
@@ -34,7 +29,6 @@ export default Component({
     }
   },
   data: {
-    a:"dd"
   },
   attached: function () {},
   methods: {
