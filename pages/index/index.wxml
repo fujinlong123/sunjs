@@ -17,7 +17,7 @@
 
         <scroll-view scroll-y scroll-top="{{scrollTop}}" class="weui-tab__panel" bindtouchstart='touchStart' style='background:#EEE' bindtouchend='touchEnd'>
 
-          <view scroll-y scroll-top="{{scrollTop}}"  class="weui-tab__content" hidden="{{activeIndex != 0}}">
+          <view   class="weui-tab__content" hidden="{{activeIndex != 0}}">
 
             <view class="weui-cells weui-cells_after-title">
               <view class="weui-cell">

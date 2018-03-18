@@ -23,7 +23,7 @@ export default Component({
       type: String,
       value: 'weixin'
     },
-    index:{
+    index: {
       type: Number,
       value: -1
     }
@@ -32,15 +32,16 @@ export default Component({
   data: {
   },
   methods: {
-    onChangeNumber(res) {
-      res.index=this.data.index;
-      res.number=res.detail.number;
-      this.triggerEvent('counterChange', res);
-    },
-    deleteTap:function(){
-      var res={};
-      res.index=this.data.index;
+   
+    deleteTap: function () {
+      var res = {};
+      res.index = this.data.index;
       this.triggerEvent('deleteTap', res);
+    },
+    editTap: function () {
+      var res = {};
+      res.index = this.data.index;
+      this.triggerEvent('editTap', res);
     }
   }
 

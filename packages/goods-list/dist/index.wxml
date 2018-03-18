@@ -1,6 +1,6 @@
 <!--packages/goods-list/dist/goods-list.wxml-->
 
-
-<block wx:for="{{goodsList}}" wx:key="item">
-  <goods-item id="goodsItem{{index}}" price="{{item.price}}" index="{{index}}" bind:counterChange="counterChange"  name="{{item.name}}" num="{{item.num}}" code="{{item.code}}"></goods-item>
+<wxc-dialog class="wxc-dialog" title="" content="确定是否删除" confirm-text="确定删除" cancel-text="取消删除" bindconfirm="onConfirm" bindcancel="onCancel" _pid="{{_pid}}"></wxc-dialog>
+<block wx:for="{{list}}" wx:key="item">
+  <goods-item id="goodsItem{{index}}" price="{{item.price}}" index="{{index}}" bind:counterChange="counterChange" bind:deleteTap="deleteTap"  name="{{item.name}}" num="{{item.num}}" code="{{item.code}}"></goods-item>
 </block>

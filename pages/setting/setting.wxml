@@ -1,5 +1,47 @@
+<!-- goods_preview -->
+<view style='display:flex;height:170rpx;background:#FFF;margin-top:10rpx'>
+
+  <view class="left" style='width:30rpx;'></view>
+
+  <!-- center   -->
+  <view class="center" style='flex-grow:1;margin-top:30rpx;margin-bottom:30rpx;display:flex'>
+
+    <!-- center left  -->
+    <view class="wrap" style="background:#F8F8F8;width:110rpx;">
+      <image class="img" src="https://fujinlong-1251521026.cos.ap-guangzhou.myqcloud.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%BE%E6%A0%87.png"></image>
+
+    </view>
+    <!-- center left  -->
+
+    <!-- center right  -->
+    <view style="flex-grow:1;line-height:110rpx">
+
+      <text style='padding-left:10rpx'>老司机的店</text>
+      <!-- desc  -->
+
+
+
+
+      <!-- desc  -->
+
+
+    </view>
+
+    <!-- center right  -->
+
+  </view>
+  <!-- center   -->
+
+  <view class="right" style='width:30rpx;'></view>
+
+</view>
+<!-- goods_preview -->
+
+
+
+
 <view class='weui-cells'>
-  <navigator url='../product/product' >
+  <navigator url='../product/product'>
     <view class='weui-cell weui-cell_access'>
       <view class="weui-cell__bd ">录入商品</view>
       <view class='weui-cell__ft'></view>

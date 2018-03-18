@@ -9,7 +9,7 @@
     <!-- center left  -->
     <view class="wrap" style="background:#F8F8F8;width:170rpx;">
         <image class="img" src="https://fujinlong-1251521026.cos.ap-guangzhou.myqcloud.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%BE%E6%A0%87.png"></image>
-        <wxc-label class="label" labelType="corner">{{index+1}}</wxc-label>
+      <!-- <wxc-label class="label" labelType="corner">{{index+1}}</wxc-label>-->
     </view>
     <!-- center left  -->
 
@@ -44,10 +44,11 @@
       <!-- opt  -->
       <view style="height:60rpx;padding-left:20rpx;display:flex">
         <view style="flex-grow:1">
-          <wxc-counter number="{{num}}" color="red" max="{{10000}}" min="1" bind:changenumber="onChangeNumber"></wxc-counter>
+          
         </view>
-        <view style="width:60rpx;text-align:right">
-          <wxc-icon size="48" color="#999" type="delete" bindtap='deleteTap'></wxc-icon>
+        <view style="width:140rpx;text-align:right;">
+          <wxc-icon size="40" color="#999" style="margin-right:40rpx" type="edit" bindtap='editTap'></wxc-icon>
+          <wxc-icon size="40" color="#999" type="delete" bindtap='deleteTap'></wxc-icon>
         </view>
       </view>
       <!-- opt  -->

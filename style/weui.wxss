@@ -1094,7 +1094,7 @@ icon {
 
 .weui-navbar__title {
   display: inline-block;
-  font-size: 15px;
+  font-size: 36rpx;
   max-width: 8em;
   width: auto;
   overflow: hidden;

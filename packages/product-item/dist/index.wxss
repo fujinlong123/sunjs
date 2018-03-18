@@ -1,20 +1,10 @@
-/* pages/setting/setting.wxss */
-
-
-
-page{
-    background-color: #f8f8f8;
-}
-
+/* packages/product-item/dist/index.wxss */
 .wrap {
     display: inline-block;
     line-height: 1;
-    border-radius:50%;
+    border-radius: 4rpx;
     position: relative;
     overflow: hidden;
-    
-
-
   }
   .img {
     width: 100%;
@@ -24,4 +14,4 @@ page{
     position: absolute;
     top: 0;
     left: 0;
-  }
+}

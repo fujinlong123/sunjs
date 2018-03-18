@@ -1,0 +1,13 @@
+<block wx:for="{{list}}" wx:key="item">
+  <product-item id="goodsItem{{index}}" price="{{item.price}}" index="{{index}}" bind:counterChange="counterChange" bind:deleteTap="deleteTap" bind:editTap="editTap" name="{{item.name}}" num="{{item.num}}" code="{{item.code}}"></product-item>
+</block>
+
+
+
+
+
+<!-- <wxc-popup class="J_Popup" animation-mode="bottom" locked="true" align="bottom" _pid="{{_pid}}">
+    <view class="popup__content" >
+
+    </view>
+</wxc-popup> -->
