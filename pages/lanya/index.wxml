@@ -1,0 +1,8 @@
+<!--pages/lanya/index.wxml-->
+<button bindtap='findBtn'>发现蓝牙</button>
+<button bindtap='connectBtn'>连接蓝牙</button>
+<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      当前选择：{{array[index]}}
+    </view>
+  </picker>

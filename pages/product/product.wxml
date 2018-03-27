@@ -8,7 +8,7 @@
   </view>
 
 
-  <view style='flex:1 1 500rpx;'>
+  <view style='flex:1 1 0;'>
     <scroll-view scroll-y style='height:100%;'>
       <product-list></product-list>
     </scroll-view>

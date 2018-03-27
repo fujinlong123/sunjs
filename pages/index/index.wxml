@@ -1,90 +1,38 @@
 <!--index.wxml-->
-<view class="container">
-  <view class='goodsView'>
-    <view style='flex:1 1 0rpx;'>
-      <view class="weui-tab">
+<view class="main">
+  <view class='top'>
 
-        <view class="weui-navbar" style='background:#fff'>
-          <block wx:for="{{tabs}}" wx:key="*this">
-            <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
-              <view class="weui-navbar__title">{{item}}</view>
-            </view>
-          </block>
-          <view class="weui-navbar__slider" style="left:{{sliderLeft}}px;transform:translateX({{sliderOffset}}px);-webkit-transform:translateX({{sliderOffset}}px);"></view>
+    <wxc-tab bind:tabchange="onClick" default-index="{{4}}"  active-text-color="#009900" active-line-color="#009900" component-id="c1" animate="{{true}}" _pid="{{_pid}}">
+      <wxc-tab-panel wx:for="{{tabs}}" wx:for-item="tab" wx:key="{{tab.content}}" tab-index="{{index}}" component-id="c1" label="{{tab.title}}" _pid="{{_pid}}">
+        dd
+
+
+
+      </wxc-tab-panel>
+
+    </wxc-tab>
+
+
+  </view>
+  <view class='footer'>
+
+    <view style='vertical-align:bottom;margin-bottom:0rpx;'>
+      <view class="btn-group">
+        <view class="price-label flex-grow-1">
+
         </view>
-
-
-
-        <scroll-view scroll-y scroll-top="{{scrollTop}}" class="weui-tab__panel" bindtouchstart='touchStart' style='background:#EEE' bindtouchend='touchEnd'>
-
-          <view   class="weui-tab__content" hidden="{{activeIndex != 0}}">
-
-            <view class="weui-cells weui-cells_after-title">
-              <view class="weui-cell">
-                <view class="weui-cell__bd">收银单号：98982984293749273</view>
-              </view>
-            </view>
-
-            <!-- goods_preview -->
-
-            <goods-list id='goodsListComp' bind:goodsListChange="goodsListChange"></goods-list>
-
-            <!-- goods_preview -->
-
-
-
-          </view>
-
-          <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
-
-          </view>
-          <view class="weui-tab__content" hidden="{{activeIndex != 2}}">选项三的内容</view>
-
-
-        </scroll-view>
-
-
+        <button type='primary' class="btn width-200" style='background:#FF6600;'>结算</button>
+      </view>
+      <view class="btn-group">
+        <input class="input flex-grow-1" placeholder='输入金额无码收银' placeholder-style='font-size:36rpx'></input>
+        <button type='primary' class="btn width-200" style='background-color:#009966;'>确定</button>
       </view>
 
-
-    </view>
-  </view>
-
-  <view class='btnView'>
-
-
-    <view id="panel" class="flex-column">
-      <view class=" flex-row">
-        <button class="flex-cell  bg-black color-withe" style='flex:1 1 0%;' bindtap='setting'>设置</button>
-        <button class="flex-cell" style='flex:4 1 0%;text-align:right;padding-right:5vh;'>
-          <rich-text nodes="<b>总计:</b><span style='color:red;'>{{sumPrice}}</span><sub><span style='font-size:15px;'>({{goodsCount}}件)</span></sub>"></rich-text>
-        </button>
-
-      </view>
-      <view class=" flex-row">
-        <button type="primary" class="flex-cell  bg-green">X1</button>
-        <button type="primary" class="flex-cell bg-green">X2</button>
-        <button type="primary" class="flex-cell  bg-green">X3</button>
-        <button type="primary" class="flex-cell  bg-green">X4</button>
-        <button type="primary" class="flex-cell  bg-green">X5</button>
-      </view>
-      <view class="flex-row ">
-        <button type="primary" class="flex-cell  bg-green">X6</button>
-        <button type="primary" class="flex-cell  bg-green">X7</button>
-        <button type="primary" class="flex-cell  bg-green">X8</button>
-        <button type="primary" class="flex-cell  bg-green">X9</button>
-        <button type="primary" class="flex-cell  bg-green">X10</button>
-
-      </view>
-
-      <view class="flex-row">
-        <button type="warn" class="flex-cell  bg-dimgrey" style='flex:1 1 0%;'>放弃</button>
-        <button class="flex-cell  bg-deeppink" bindtap='settleAccounts' style='flex:1 1 0%;'>确定</button>
-        <button class="flex-cell  bg-yellowgreen" style='flex:3 1 0%' bindtap='bindViewTap'>扫码</button>
-
+      <view class="btn-group">
+        <button type='primary' class="btn width-200" style='background:#333333'>设置</button>
+        <button type='primary' class="btn flex-grow-1">扫码条形码</button>
       </view>
     </view>
   </view>
-
 
 </view>

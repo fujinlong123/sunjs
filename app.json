@@ -1,11 +1,13 @@
 {
   "pages": [
-    "pages/product/product",
-    "pages/setting/setting",
     "pages/index/index",
+    "pages/lanya/index",
+    "pages/setting/setting",
+    "pages/product/product",
     "pages/login/login",
     "pages/logs/logs",
     "pages/error/error"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

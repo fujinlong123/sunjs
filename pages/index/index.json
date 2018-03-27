@@ -2,7 +2,9 @@
   "usingComponents": {
     "wxc-counter": "../../../packages/wxc-counter/dist/index",
     "wxc-icon": "../../../packages/wxc-icon/dist/index",
-    "goods-list": "../../../packages/goods-list/dist/index"
+    "goods-list": "../../../packages/goods-list/dist/index",
+    "wxc-tab": "../../../packages/wxc-tab/dist/index",
+    "wxc-tab-panel": "../../../packages/wxc-tab/dist/panel"
    
   }
 }
