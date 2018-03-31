@@ -26,6 +26,14 @@ export default Component({
     index:{
       type: Number,
       value: -1
+    },
+    hidCounter:{
+      type:Boolean,
+      value:false
+    },
+    hidEdit: {
+      type: Boolean,
+      value: true
     }
 
   },

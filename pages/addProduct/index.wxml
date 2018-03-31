@@ -1,0 +1,25 @@
+<!--pages/addProduct/index.wxml-->
+<view style='display:flex;flex-direction:column;height:100%'>
+
+  <view style='padding:10rpx'>
+    <view class="btn-group">
+        <input class="input flex-grow-1" placeholder='输入条形码' placeholder-style='font-size:36rpx'></input>
+        <button type='primary' class="btn width-200" style='background-color:#009966;'>扫码</button>
+    </view>
+     <view class="btn-group">
+        <input  class="input flex-grow-1" placeholder='商品名称' placeholder-style='font-size:36rpx'></input>
+    </view>
+      <view class="btn-group">
+        <input type='digit' class="input flex-grow-1" placeholder='价格' placeholder-style='font-size:36rpx'></input>
+    </view>
+     <view class="btn-group">
+         <button type='primary' class="btn flex-grow-1" >保存</button>
+    </view>
+  </view>
+  <view style='margin-top:30rpx;padding:10rpx'>
+  最近添加
+  </view>
+  <view style='flex-grow:1;border-top:1rpx solid #d7d7d7'></view>
+
+
+</view>

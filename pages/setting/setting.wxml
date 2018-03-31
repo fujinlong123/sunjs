@@ -85,7 +85,6 @@
 
 <view class='weui-cells'>
   <view class='weui-cell weui-cell_access'>
-    <view class="weui-cell__bd ">详细了解请QQ加群(663055882)</view>
-    <view class='weui-cell__ft'></view>
+    <button open-type="contact" type="primary" class="weui-btn" style='line-height:2;'>微信客服</button>
   </view>
 </view>

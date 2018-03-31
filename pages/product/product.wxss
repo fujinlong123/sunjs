@@ -1,6 +1,6 @@
 /* pages/product/product.wxss */
 
-page{background:#EEE}
+page{background:#FFF}
 .weui-cell:before{
   left:0px;
 }

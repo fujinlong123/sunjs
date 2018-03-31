@@ -14,3 +14,6 @@
     top: 0;
     left: 0;
   }
+  .goods_preview{
+    background:#FFF;border-bottom:1px solid #f2f2f2;
+  }

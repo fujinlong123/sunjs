@@ -1,0 +1,55 @@
+<!--pages/addProduct/index.wxml-->
+<view style='display:flex;flex-direction:column;height:100%'>
+
+  <view style='padding:10rpx'>
+    <view class="btn-group">
+      <input type='digit' class="input flex-grow-1" placeholder='条码秤标识位' placeholder-style='font-size:36rpx'></input>
+
+      <button class="btn" bindtap='showPopup'>
+        <wxc-icon size="48" color="#999" type="help"></wxc-icon>
+      </button>
+
+    </view>
+    <view class="btn-group">
+      <input class="input flex-grow-1" placeholder='商品编码' placeholder-style='font-size:36rpx'></input>
+      <button type='primary' class="btn width-200" style='background-color:#009966;'>扫码</button>
+    </view>
+    <view class="btn-group">
+      <input class="input flex-grow-1" placeholder='商品名称' placeholder-style='font-size:36rpx'></input>
+    </view>
+    <view class="btn-group">
+      <input type='digit' class="input flex-grow-1" disabled="true" placeholder='价格不用输入' placeholder-style='font-size:36rpx'></input>
+    </view>
+    <view class="btn-group">
+      <button type='primary' class="btn flex-grow-1">保存</button>
+    </view>
+  </view>
+  <view style='margin-top:30rpx;padding:10rpx'>
+    最近添加
+  </view>
+  <view style='flex-grow:1;border-top:1rpx solid #d7d7d7'></view>
+
+
+</view>
+
+<wxc-popup class="J_Popup" animation-mode="center" align="center" _pid="{{_pid}}">
+  <scroll-view  scroll-y class="popup__content">
+  <view style='text-align:center;font-weight:bold;' >条码秤编码组成</view>
+    <view>
+      <image style='width:500rpx' src='https://fujinlong-1251521026.cos.ap-guangzhou.myqcloud.com/20180326_163610.jpg'></image>
+    </view>
+
+    <view>
+      <view>
+        <view style='font-weight:bold'><text style='font-weight:bold'>13位金额码</text></view>
+        <view>23 82672 01782 0</view>
+
+        <view style='margin-top:30rpx'><text style='color:blue'>23</text> 前两位作为电子秤的固定标识位</view>
+        <view><text style='color:blue'>82672</text> 第三位到第七位PLU码，代表商品的编码</view>
+        <view><text style='color:blue'>01782</text> 第八位到第十二位为金额信息（17.82元）</view>
+        <view><text style='color:blue'>0</text> 最后一位为校验位</view>
+      </view>
+      <button class="btn" type="primary" bindtap='hidePopup'>关闭</button>
+    </view>
+  </scroll-view>
+</wxc-popup>

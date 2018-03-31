@@ -37,3 +37,46 @@ page{
     text-align: left;
     font-size: 14px;
 }
+
+.btn {
+  height: 90rpx;
+  margin-top: 4rpx;
+  border-radius: 8rpx;
+  color: #fff;
+  border: 2rpx solid #d7d7d7;
+  line-height:90rpx;
+}
+
+.btn-group {
+  margin-top: 4rpx;
+  display: flex;
+}
+
+.btn-group .btn {
+  margin-top: 0rpx;
+  margin-left: 4rpx;
+}
+.btn-group .icon {
+  margin-top: 0rpx;
+  margin-left: 4rpx;
+}
+.btn-group .icon:first-child {
+  margin-left: 0rpx;
+}
+
+.btn-group .btn:first-child {
+  margin-left: 0rpx;
+}
+
+.btn-group .input {
+  border: 2rpx solid #d7d7d7;
+  border-radius: 8rpx;
+  background-color: #FAFFBD;
+  height: 86rpx;
+}
+.flex-grow-1 {
+  flex-grow: 1;
+}
+.width-200 {
+  width: 200rpx;
+}

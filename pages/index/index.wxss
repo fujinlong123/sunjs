@@ -2,39 +2,24 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  background: #c0c0c0;
 }
 
 .top {
-  flex: 1;
+  flex-grow: 1;
+  height: 0rpx;
+  background: #fff;
+ 
 }
 
 .footer {
   padding: 10rpx;
-  
+  border-top: 1rpx solid #F2F2F2;
+  background: #fff;
+ 
 }
 
-.btn {
-  height: 90rpx;
-  margin-top: 4rpx;
-  border-radius: 8rpx;
-  color:#fff;
-  border: 2rpx solid #D7D7D7;
-}
 
-.btn-group {
-  margin-top: 4rpx;
-  display: flex;
-
-}
-
-.btn-group .btn {
-  margin-top: 0rpx;
-  margin-left: 4rpx;
-}
-
-.btn-group .btn:first-child {
-  margin-left: 0rpx;
-}
 
 .btn-group .price-label {
   border: 2rpx solid #d7d7d7;
@@ -42,18 +27,6 @@
   height: 86rpx;
 }
 
-.btn-group .input {
-  border: 2rpx solid #d7d7d7;
-  border-radius: 8rpx;
-  background-color: #ff3;
-  height: 86rpx;
-}
 
 
 
-.flex-grow-1 {
-  flex-grow: 1;
-}
-.width-200{
-  width: 200rpx;
-}

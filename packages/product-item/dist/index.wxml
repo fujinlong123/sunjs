@@ -1,15 +1,16 @@
 <!-- goods_preview -->
-<view style='display:flex;height:240rpx;background:#FFF;margin-top:10rpx'>
+<view class="goods_preview" >
 
-  <view class="left" style='width:30rpx;margin-top:30rpx;margin-bottom:40rpx'></view>
+<view  style='display:flex;background:#FFF;margin-top:10rpx;margin-bottom:20rpx'>
+  <view class="left" style='width:20rpx;'></view>
 
   <!-- center   -->
-  <view class="center" style='flex-grow:1;margin-top:30rpx;margin-bottom:40rpx;display:flex'>
+  <view class="center" style='flex-grow:1;display:flex'>
 
     <!-- center left  -->
-    <view class="wrap" style="background:#F8F8F8;width:170rpx;">
+    <view class="wrap" style="background:#F8F8F8;width:184rpx;">
         <image class="img" src="https://fujinlong-1251521026.cos.ap-guangzhou.myqcloud.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%BE%E6%A0%87.png"></image>
-      <!-- <wxc-label class="label" labelType="corner">{{index+1}}</wxc-label>-->
+        <wxc-label class="label" labelType="corner">{{index+1}}</wxc-label>
     </view>
     <!-- center left  -->
 
@@ -37,14 +38,12 @@
         <view style="width:160rpx;text-align:right;font-size:28rpx;line-height:1;">
           ￥{{price}}
         </view>
-
       </view>
       <!-- desc  -->
-
       <!-- opt  -->
       <view style="height:60rpx;padding-left:20rpx;display:flex">
         <view style="flex-grow:1">
-          
+        
         </view>
         <view style="width:140rpx;text-align:right;">
           <wxc-icon size="40" color="#999" style="margin-right:40rpx" type="edit" bindtap='editTap'></wxc-icon>
@@ -60,7 +59,7 @@
   </view>
   <!-- center   -->
 
-  <view class="right" style='width:30rpx;margin-top:15px;margin-bottom:40rpx'></view>
-
+  <view class="right" style='width:30rpx;'></view>
+</view>
 </view>
 <!-- goods_preview -->

@@ -1,0 +1,7 @@
+/* pages/addProduct/index.wxss */
+.popup__content {
+    width: 100%;
+    height:80%;
+    background: #FFFFFF;
+    border-radius: 12rpx;
+  }

@@ -1,3 +1,4 @@
+var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
 
 
 //index.js
@@ -14,8 +15,10 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
   
-    tabs: [{ title: '选项一', content: '内容一' }, { title: '选项二', content: '内容二' }, { title: '选项三', content: '内容三' }]
-
+    tabs: ["待收银", "已完成", "已取消"],
+    activeIndex: 0,
+    sliderOffset: 0,
+    sliderLeft: 0
 
   }, 
 
@@ -77,6 +80,16 @@ Page({
     })
   },
   onLoad() {
+
+    var that = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        that.setData({
+          sliderLeft: (res.windowWidth / that.data.tabs.length - sliderWidth) / 2,
+          sliderOffset: res.windowWidth / that.data.tabs.length * that.data.activeIndex
+        });
+      }
+    });
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
