@@ -3,10 +3,10 @@
 const baseServerUrl = () => {
   var url="";
   if(isDev()){
-    url = "https://5a9a315a-0.gz.1251521026.clb.myqcloud.com/sun";
-   // url = "http://127.0.0.1:9080/sun";
+    //url = "https://5a9a315a-0.gz.1251521026.clb.myqcloud.com/sun";
+   url = "http://127.0.0.1:9080/sun";
   }else{
-    url = "https://5a9a315a-0.gz.1251521026.clb.myqcloud.com/sun"; 
+    url = "https://b.suishoucms.cn/sun"; 
   }
   return url;
 }

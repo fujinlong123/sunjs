@@ -13,7 +13,7 @@
 
       <scroll-view scroll-y class="weui-tab__panel"  scroll-top="{{scrollTop}}">
         <view class="weui-tab__content" hidden="{{activeIndex != 0}}" >
-            <view style='line-height:2;font-size:28rpx;padding:10rpx;border-bottom:1px solid #f2f2f2;'>收银单号:12121312312312211</view>
+            <view style='line-height:2;font-size:24rpx;padding:10rpx;border-bottom:1px solid #f2f2f2;'>收银单号：12121312312312211</view>
             <goods-list id="goodsListComp"></goods-list>
      
         </view>

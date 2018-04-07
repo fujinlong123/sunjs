@@ -45,10 +45,10 @@
       <!-- opt  -->
       <view style="height:60rpx;padding-left:20rpx;display:flex">
         <view style="flex-grow:1">
-          <wxc-counter number="{{num}}"  color="red" max="{{10000}}" min="1" bind:changenumber="onChangeNumber"></wxc-counter>
+          <wxc-counter number="{{num}}" wx:if="{{!hidCounter}}"  color="red" max="{{10000}}" min="1" bind:changenumber="onChangeNumber"></wxc-counter>
         </view>
-        <view style="width:140rpx;text-align:right;">
-          <wxc-icon size="40" color="#999" style="margin-right:40rpx" type="edit" bindtap='editTap'></wxc-icon>
+        <view style="width:140rpx;text-align:right;" >
+          <wxc-icon size="40" color="#999" style="margin-right:40rpx" type="edit"  wx:if="{{!hidEdit}}"  bindtap='editTap'></wxc-icon>
           <wxc-icon size="40" color="#999" type="delete" bindtap='deleteTap'></wxc-icon>
         </view>
       </view>

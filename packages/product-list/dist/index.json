@@ -1,7 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "product-item": "../../product-item/dist/index",
+   "goods-item": "../../goods-item/dist/index",
     "wxc-popup": "../../../packages/wxc-popup/dist/index",
     "wxc-dialog": "../../../packages/wxc-dialog/dist/index"
   }

@@ -1,13 +1,29 @@
 const config = require("config.js")
-const sun={};
+const data = {};
+const sun = {};
 
 
-sun._loginError=function(msg,callback){
+sun.getSessionId = function () {
+  if (data.sessionId) {
+    return data.sessionId;
+  } else {
+    return wx.getStorageSync("sessionId");
+  }
+}
+
+sun.setSessionId = function (sessionId) {
+  wx.setStorageSync("sessionId", sessionId);
+  data.sessionId = sessionId;
+}
+
+
+
+sun._loginError = function (msg, callback) {
   wx.showToast({
     icon: 'warn',
     title: msg,
-    complete:function(){
-      if (typeof callback==='function'){
+    complete: function () {
+      if (typeof callback === 'function') {
         callback();
       }
     }
@@ -16,22 +32,13 @@ sun._loginError=function(msg,callback){
 
 
 sun._loginSuccess = function (callback) {
-  if (callback){
+  if (callback) {
     callback();
   }
 }
 
-sun._login = function (options){
-  //session 未过期，并且在本生命周期一直有效
-  console.log('登录未过期');
-  var sessionId = wx.getStorageSync("sessionId");
-  console.log(sessionId);
-
-  if (sessionId) {
-    sun._loginSuccess(options.success);
-    return;
-  }
-  //sessionId为空，重新登录
+sun.login = function (options) {
+  var options = options||{};
   wx.login({
     success: res => {
       // 发送 res.code 到后台换取 openId, sessionKey, unionId
@@ -40,57 +47,37 @@ sun._login = function (options){
         wx.request({
           url: config.baseServerUrl() + "/weixin/onLogin",
           data: {
-            code: res.code
+            code: res.code,
+            sessionId:sun.getSessionId()
           },
           success: function (res) {
-            console.log(res);
-            if (res.statusCode == 200) {
+            if (res.data) {
               var result = res.data;
-              console.log(result);
               if (result.ret == 'success') {
-                wx.setStorageSync(
-                  'sessionId',
-                  result.data.sessionId
-                );
+                sun.setSessionId(result.sessionId);
                 sun._loginSuccess(options.success);
-
               } else {
-              
-                sun._loginError(result.msg,options.fail);
+                sun._loginError("登录失败,请稍候再试", options.fail);
               }
             } else {
               sun._loginError("服务器异常,请稍候再试", options.fail);
             }
           },
-          fail:function(res){
-      
-            sun._loginError("网络异常,请稍候再试", options.fail);
+          fail: function (res) {
+            sun._loginError("微信登录失败,请稍候再试", options.fail);
           }
         })
       } else {
-        sun._loginError('登录失败,请稍候再试', options.fail);
+        sun._loginError('微信登录失败,请稍候再试', options.fail);
       }
     }
   })
 }
 
 
-sun.login=function(options){
-  wx.checkSession({
-    success: function () {
-     
-        sun._login(options);
-
-    },
-    fail: function (options) {
-      //登录态过期
-      sun._login();
-    }
-  })
-}
 
 
-sun.reportUserInfo= function () {
+sun.reportUserInfo = function () {
   // 获取用户信息
   wx.getSetting({
     success: res => {
@@ -109,7 +96,7 @@ sun.reportUserInfo= function () {
           success: res => {
             // 可以将 res 发送给后台解码出 unionId
             console.log(res.userInfo);
-            var app=getApp();
+            var app = getApp();
             app.globalData.userInfo = res.userInfo
             // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
             // 所以此处加入 callback 以防止这种情况
@@ -125,25 +112,49 @@ sun.reportUserInfo= function () {
 
 
 //封装wx.request 使得每次请求参数都会带上sessionId
-sun.request=function(options){
-  var data=options.data||{};
+sun.request = function (options) {
+  var data = options.data || {};
+  if (options.url){
+    if(options.url.indexOf("http")!=0){
+      options.url = config.baseServerUrl() + "/" + options.url;
+    }
+  }
 
-  var method = options.method||"GET";
-
-  data.sessionId=wx.getStorageSync("sessionId");
-
+  var method = options.method || "GET";
+  data.sessionId = sun.getSessionId();
   wx.request({
     method, method,
     url: options.url,
-    data:data,
-    success:function(res){
-      if (typeof options.success==='function'){
+    data: data,
+    success: function (res) {
+
+      if (res.data) {
+        var data = res.data;
+        if (data.ret == "success") {
+         
+        } else if (data.ret == "fail") {
+          if (data.code == "noLogin") {//未登录，重新发起登录，并重新请求
+            sun.login({success:function(){
+              sun.request(options);
+            }});
+          }
+        } else {
+
+        }
+      }
+
+      if (typeof options.success === 'function') {
         options.success(res);
       }
     },
-    fail:function(res){
+    fail: function (res) {
       if (typeof options.fail === 'function') {
         options.fail(res);
+      }
+    },
+    complete(res) {
+      if (typeof options.complete === 'function') {
+        options.complete(res);
       }
     }
   })
